@@ -1,0 +1,65 @@
+"""Small, manually prepared Python question bank with three difficulty levels.
+
+Each question: (question text, [options], index of correct option).
+Used by the Streamlit demo.  The RL agent picks the *difficulty*; the quiz
+system picks a question inside that category.
+"""
+
+QUESTION_BANK = {
+    0: [  # easy
+        ("Which function prints text to the screen in Python?",
+         ["print()", "echo()", "show()", "write()"], 0),
+        ("What is the result of 3 + 4 * 2 in Python?",
+         ["14", "11", "10", "24"], 1),
+        ("Which symbol starts a single-line comment in Python?",
+         ["//", "#", "--", "/*"], 1),
+        ("Which of these is a valid variable name?",
+         ["2name", "my-name", "my_name", "my name"], 2),
+        ("What type is the value 3.14?",
+         ["int", "str", "float", "bool"], 2),
+        ("What does len('hello') return?",
+         ["4", "5", "6", "Error"], 1),
+        ("Which keyword is used to define a function?",
+         ["func", "define", "def", "function"], 2),
+        ("What is the output of type(True)?",
+         ["<class 'int'>", "<class 'bool'>", "<class 'str'>", "<class 'float'>"], 1),
+    ],
+    1: [  # medium
+        ("What does [1, 2, 3][-1] evaluate to?",
+         ["1", "2", "3", "IndexError"], 2),
+        ("What is the output of list(range(2, 8, 2))?",
+         ["[2, 4, 6]", "[2, 4, 6, 8]", "[2, 3, 4, 5, 6, 7]", "[4, 6, 8]"], 0),
+        ("Which method adds an item to the end of a list?",
+         ["add()", "append()", "insert_end()", "push()"], 1),
+        ("What does 'abc'.upper() return?",
+         ["'abc'", "'Abc'", "'ABC'", "None"], 2),
+        ("What is the result of 7 // 2?",
+         ["3.5", "3", "4", "1"], 1),
+        ("Which data type is immutable?",
+         ["list", "dict", "set", "tuple"], 3),
+        ("What does {'a': 1}.get('b', 0) return?",
+         ["KeyError", "None", "0", "1"], 2),
+        ("What is the output of 'a,b,c'.split(',')?",
+         ["['a,b,c']", "['a', 'b', 'c']", "('a','b','c')", "'abc'"], 1),
+    ],
+    2: [  # hard
+        ("What does [x*x for x in range(4) if x % 2 == 0] produce?",
+         ["[0, 4]", "[0, 1, 4, 9]", "[4, 16]", "[0, 2]"], 0),
+        ("What is printed? def f(a, b=[]): b.append(a); return b\nprint(f(1), f(2))",
+         ["[1] [2]", "[1] [1, 2]", "[1, 2] [1, 2]", "Error"], 2),
+        ("What does the decorator syntax @decorator above a function do?",
+         ["Comments the function out", "Replaces the function with decorator(function)",
+          "Makes the function private", "Runs the function twice"], 1),
+        ("What is the time complexity of looking up a key in a Python dict (average)?",
+         ["O(n)", "O(log n)", "O(1)", "O(n log n)"], 2),
+        ("What does 'yield' do inside a function?",
+         ["Ends the program", "Turns it into a generator", "Raises an exception", "Imports a module"], 1),
+        ("What does (bool([]), bool('0')) evaluate to?",
+         ["(False, False)", "(False, True)", "(True, True)", "(True, False)"], 1),
+        ("Which statement about lambda functions is true?",
+         ["They can contain multiple statements", "They are limited to a single expression",
+          "They cannot be passed as arguments", "They must have a name"], 1),
+        ("What does a, *b = [1, 2, 3] assign to b?",
+         ["1", "[2, 3]", "(2, 3)", "Error"], 1),
+    ],
+}

@@ -1,0 +1,9 @@
+# Core (everything except the TF-Agents trainer): any recent Python 3.9+
+numpy
+matplotlib
+pandas
+streamlit>=1.30
+
+# Only for train_tfagents.py  -> use Python 3.9, 3.10 or 3.11 (TF 2.15 does not support 3.12+)
+tensorflow==2.15.0
+tf-agents==0.19.0
